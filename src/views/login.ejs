@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Inicia sesión</title>
+        <%- include('partials/head.ejs') %>
+    </head>
+    <body class="login">
+
+        <div class="container">
+            <div class="col-sm-6 mx-auto">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h1 class="text-center">
+                            <span class="fas fa-sign-in-alt"></span> Inicia sesión
+                        </h1>
+
+                        <% if (message.length > 0) { %>
+                            <div class="alert alert-danger">
+                                <%= message %>
+                            </div>
+                        <% } %>
+
+                        <form acion="/login" method="post">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" name="password" class="form-control">
+                            </div>
+                            <br>
+                            <input type="submit" class="btn btn-dark btn-lg">
+                        </form>
+
+                        <hr>
+                        <div class="text-center">
+                            <p>Necesitas una cuenta? <a href="/signup">Registrate</a></p>
+                            <p>O ve a <a href="/">Home</a></p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
